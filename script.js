@@ -2,7 +2,7 @@ const entrance=document.getElementById('home'),details=document.getElementById('
 let transitionTimer;
 function showDetails(animate=false){clearTimeout(transitionTimer);entrance.hidden=true;details.hidden=false;entrance.classList.remove('opening');enter.disabled=false;if(animate)details.classList.add('reveal');else details.classList.remove('reveal');window.scrollTo(0,0);details.focus({preventScroll:true});}
 function showHome(){clearTimeout(transitionTimer);details.hidden=true;entrance.hidden=false;entrance.classList.remove('opening');enter.disabled=false;window.scrollTo(0,0);}
-enter.addEventListener('click',()=>{enter.disabled=true;entrance.classList.add('opening');const delay=matchMedia('(prefers-reduced-motion: reduce)').matches?0:600;transitionTimer=setTimeout(()=>{location.hash='details';showDetails(true);},delay);});
+enter.addEventListener('click',()=>{enter.disabled=true;entrance.classList.add('opening');const delay=matchMedia('(prefers-reduced-motion: reduce)').matches?0:1600;transitionTimer=setTimeout(()=>{location.hash='details';showDetails(true);},delay);});
 window.addEventListener('hashchange',()=>{if(location.hash==='#details')showDetails();else showHome();});
 if(location.hash==='#details')showDetails();
 const tabs=Array.from(document.querySelectorAll('[role=tab]'));
@@ -16,3 +16,4 @@ function savePowers(){try{localStorage.setItem('yj-superpowers',JSON.stringify(p
 drop.addEventListener('click',()=>{picker.hidden=!picker.hidden;drop.setAttribute('aria-expanded',String(!picker.hidden));if(!picker.hidden)picker.querySelector('button').focus();});
 document.querySelectorAll('[data-power]').forEach(button=>button.addEventListener('click',()=>{powers.push(button.dataset.power);powers=powers.slice(-12);renderPowers();savePowers();picker.hidden=true;drop.setAttribute('aria-expanded','false');drop.focus();}));
 reset.addEventListener('click',()=>{powers=[];renderPowers();savePowers();});renderPowers();
+

@@ -24,3 +24,7 @@ Reduced-motion preferences, visible keyboard focus, skip-intro navigation, seman
 ## Credits
 
 Design reference: https://thezeroquotient.com/portfolio. Prior portfolio/content source: https://github.com/yoshjayn/Portfolio-React. Personal portrait and résumé supplied by the user. Original HTML/CSS/JavaScript implementation; no source or artwork copied from the reference. An unofficial fan-inspired project, not affiliated with Powerpuff Girls rights holders.
+
+## Townsville animation update
+
+The portrait has a centered, capped 3:4 frame across responsive widths. Clouds continuously drift in both scenes. Generated Blossom, Bubbles and Buttercup sprites fly left-up, straight up and right-up, with color trails, and depart together when entering the profile. Reduced-motion preferences show a static trio and stationary clouds. Character sprite: assets/powerpuff-trio.png, produced with the built-in image generator. No changes to the user's photograph.
