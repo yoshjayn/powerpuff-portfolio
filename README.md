@@ -28,3 +28,5 @@ Design reference: https://thezeroquotient.com/portfolio. Prior portfolio/content
 ## Townsville animation update
 
 The portrait has a centered, capped 3:4 frame across responsive widths. Clouds continuously drift in both scenes. Generated Blossom, Bubbles and Buttercup sprites fly left-up, straight up and right-up, with color trails, and depart together when entering the profile. Reduced-motion preferences show a static trio and stationary clouds. Character sprite: assets/powerpuff-trio.png, produced with the built-in image generator. No changes to the user's photograph.
+`nThe profile now uses assets/portrait-cartoon.png: the user-approved cartoon interpretation of the supplied photo, generated with the built-in image tool. Original personal photo remains in assets/portrait-new.jpeg for archival/reference use.
+`nThe entrance now uses an original CSS Chemical X bottle: bubbling green liquid, glass highlights, a stopper-pop and burst animation on entry. It replaces the huge heart. The user chose this entrance concept.

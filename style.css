@@ -31,3 +31,30 @@
 .entrance.opening .flyer{animation-duration:1.5s}
 .flyer{width:clamp(82px,11vw,145px);top:84%}
 @media(prefers-reduced-motion:reduce){.flyer{top:auto;bottom:3%;width:65px}.flyer.blossom{left:30%}.flyer.bubbles{left:50%}.flyer.buttercup{left:70%}}
+/* Chemical X is the entrance: pop the stopper, then reveal the profile. */
+.entrance{background:linear-gradient(180deg,#c9e8f4 0%,#f4d9ea 60%,#e9bad4 100%)}
+.heart-rings{display:none}.enter{gap:30px;padding:45px 20px 0}.entry-caption{color:#72546c}
+.chemical-bottle{display:block;position:relative;width:clamp(165px,27vmin,265px);height:clamp(250px,43vmin,390px);filter:drop-shadow(0 20px 14px #69497022);isolation:isolate;transition:transform .3s}
+.enter:hover .chemical-bottle{transform:rotate(-3deg)}
+.bottle-aura{position:absolute;width:190%;height:130%;left:-45%;top:-10%;background:radial-gradient(ellipse,#ffffffb3,transparent 65%);z-index:-2;border-radius:50%}
+.bottle-stopper{position:absolute;top:0;left:33%;width:34%;height:12%;background:linear-gradient(90deg,#3b3148,#695372 45%,#372d43);border:3px solid #332c43;border-radius:9px 9px 5px 5px;z-index:4;box-shadow:inset 0 5px 0 #ffffff26}
+.bottle-stopper:after{content:'';position:absolute;left:14%;right:14%;top:28%;height:3px;background:#ffffff33;border-radius:3px}
+.bottle-neck{position:absolute;top:10%;height:23%;width:29%;left:35.5%;background:linear-gradient(90deg,#c4e8ef,#f6fdff 30%,#d0e6ef 75%,#a2bed7);border:3px solid #61546c;border-bottom:0;border-radius:4px;z-index:2}
+.bottle-glass{position:absolute;inset:27% 0 0;border:3px solid #61546c;border-radius:32% 32% 18% 18%;background:linear-gradient(100deg,#f9ffffba,#e8f8ff90 38%,#b4cfeb9c);overflow:hidden;box-shadow:inset -9px -8px 0 #72638a1f,inset 6px 0 0 #ffffff8c}
+.bottle-liquid{position:absolute;inset:34% 0 0;background:linear-gradient(130deg,#c3eea9,#94d2ae 55%,#72b7a7);border-top:3px solid #eaffdda8;border-radius:40% 45% 0 0 / 9% 8% 0 0;transform-origin:50% 90%;animation:liquid-sway 4s ease-in-out infinite}
+.bottle-label{position:absolute;left:18%;right:18%;top:30%;bottom:17%;background:#fffaf1;border:2px solid #5d4b61;border-radius:9px;transform:rotate(-5deg);display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.1;box-shadow:3px 4px 0 #56426415;color:#43344d}
+.bottle-label small{font-size:clamp(8px,1.4vmin,13px);letter-spacing:2px;font-weight:700}.bottle-label strong{font-family:Poppins,sans-serif;font-size:clamp(48px,10vmin,88px);font-weight:800}
+.glass-shine{position:absolute;left:7%;top:14%;height:48%;width:6%;border-radius:99px;background:#fffc;transform:rotate(3deg)}
+.bottle-bubbles i{position:absolute;left:18%;bottom:15%;width:7%;aspect-ratio:1;border:2px solid #edffefa8;border-radius:50%;animation:bubble-rise 3.2s ease-in infinite}.bottle-bubbles i:nth-child(2){left:77%;animation-delay:-1.3s;width:9%}.bottle-bubbles i:nth-child(3){left:70%;animation-delay:-2.4s;width:5%}.bottle-bubbles i:nth-child(4){left:27%;animation-delay:-.8s;width:4%}
+.chemical-burst{position:absolute;left:50%;top:10%;font-size:110px;line-height:1;transform:translate(-50%,-50%) scale(0);color:#c1f1a5;text-shadow:0 0 35px #fff;z-index:5;opacity:0}
+@keyframes liquid-sway{0%,100%{transform:rotate(-2deg) scale(1.04)}50%{transform:rotate(2deg) scale(1.04)}}
+@keyframes bubble-rise{0%{transform:translateY(0);opacity:0}20%{opacity:.8}100%{transform:translateY(-140px);opacity:0}}
+.entrance.opening .bottle-stopper{animation:stopper-pop 1.5s ease-out both}.entrance.opening .chemical-burst{animation:chemical-pop 1.5s ease-out both}.entrance.opening .chemical-bottle{animation:bottle-release 1.5s ease-out both}
+@keyframes stopper-pop{0%{transform:translateY(0) rotate(0);opacity:1}30%{transform:translateY(-100px) rotate(-25deg);opacity:1}100%{transform:translate(90px,-220px) rotate(75deg);opacity:0}}
+@keyframes chemical-pop{0%,12%{transform:translate(-50%,-50%) scale(0);opacity:0}38%{transform:translate(-50%,-50%) scale(1.7);opacity:1}100%{transform:translate(-50%,-50%) scale(4);opacity:0}}
+@keyframes bottle-release{0%,25%{opacity:1;transform:rotate(0)}40%{transform:rotate(-5deg)}60%{transform:rotate(5deg)}100%{transform:scale(.85);opacity:0}}
+.portrait-scene img{object-position:center;object-fit:cover}
+@media(max-width:680px){.enter{gap:25px;padding-top:20px}.chemical-bottle{width:180px;height:275px}.bottle-label strong{font-size:60px}.bottle-label small{font-size:9px}}
+@media(prefers-reduced-motion:reduce){.chemical-bottle,.bottle-stopper,.chemical-burst,.bottle-liquid,.bottle-bubbles i{animation:none!important}.enter:hover .chemical-bottle{transform:none}}
+/* Keep the résumé shortcut clear of the departing characters on small screens. */
+.entrance>.entry-resume{top:18px;bottom:auto;right:22px;font-size:10px;color:#6e5875}
