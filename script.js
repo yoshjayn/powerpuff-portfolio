@@ -1,0 +1,6 @@
+const filters=document.querySelectorAll('[data-filter]');
+const projects=document.querySelectorAll('.project');
+filters.forEach(button=>button.addEventListener('click',()=>{filters.forEach(b=>b.setAttribute('aria-pressed',String(b===button)));let count=0;projects.forEach(project=>{project.hidden=button.dataset.filter!=='all'&&project.dataset.category!==button.dataset.filter;if(!project.hidden)count++;});document.getElementById('count').textContent=String(count).padStart(2,'0')+' MISSIONS';}));
+const messages=['Curiosity + code = something worth exploring.','Today’s superpower: making a tricky idea click.','One bug at a time. One useful thing at a time.'];let mix=0;
+document.getElementById('power').addEventListener('click',()=>{const art=document.querySelector('.hero-art');art.classList.remove('powered');requestAnimationFrame(()=>requestAnimationFrame(()=>art.classList.add('powered')));document.getElementById('power-message').textContent=messages[mix++%messages.length];});
+document.getElementById('copy').addEventListener('click',async function(){try{await navigator.clipboard.writeText('aswiniy68@gmail.com');this.textContent='Email copied ✓';setTimeout(()=>this.textContent='Copy email',2500);}catch{this.textContent='Select the email above to copy it';}});
